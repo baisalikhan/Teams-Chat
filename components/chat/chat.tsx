@@ -4,13 +4,12 @@ import ActiveUser from './activeUser';
 import NonActiveUser from './nonActiveUser';
 
 function Chat() {
-    const activeUserImgPath = "https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=144&h=144";
+    const activeUserImgPath = "/team4.jpg";
     const activeUserName = "Penney J. Hereford";
     const activeUserMsgTime = "Yesterday, 08:29 pm";
     const activeUserMessage = "Lorem ipsum dolor sit amet consectetur. Interdum et lobortis pulvinar in quam tempus pulvinar purus sit. Nec gravida non justo scelerisque. Neque lacus rhoncus ut enim leo habitasse. Gravida nunc tristique volutpat morbi eget in morbi turpis nulla. Senectus fermentum urna convallis lorem.";
 
-
-    const NonActiveUserImgPath = "https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=144&h=144";
+    const NonActiveUserImgPath = "/nonActive.jpg"
     const NonActiveUserName = "Penney J. Hereford";
     const NonActiveUserMsgTime = "Yesterday, 08:29 pm";
     const NonActiveUserMessage = "Lorem ipsum dolor sit amet consectetur. Interdum et lobortis pulvinar in quam tempus pulvinar purus sit. Nec gravida non justo scelerisque. Neque lacus rhoncus ut enim leo habitasse. Gravida nunc tristique volutpat morbi eget in morbi turpis nulla. Senectus fermentum urna convallis lorem.";

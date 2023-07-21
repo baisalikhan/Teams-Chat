@@ -1,7 +1,8 @@
 import React from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
-
+import Image from "next/image";
+import { Avatar, Badge, Space } from 'antd';
 import {
   AiOutlineAlignLeft,
   AiFillMessage,
@@ -11,7 +12,12 @@ import {
   AiOutlineIdcard,
   AiOutlineMail,
   AiOutlineSetting,
+  AiOutlineBell,
+  AiTwotoneFlag,
+  AiOutlineExclamationCircle
 } from "react-icons/ai";
+import { FaRegMoon } from "react-icons/fa6";
+import Badgee from "./UI/badge";
 
 function Topbar() {
   return (
@@ -29,21 +35,23 @@ function Topbar() {
       <div className="flex mr-[3%]">
         {/* icons part start */}
         <div className="col-span-2 flex justify-center items-center space-x-6 mr-12">
-          <AiOutlineCheckCircle className="text-2xl" />
-          <AiOutlineUnorderedList className="text-2xl" />
-          <AiOutlineIdcard className="text-2xl" />
-          <AiOutlineMail className="text-2xl" />
-          <AiOutlineSetting className="text-2xl" />
+          <FaRegMoon className="text-2xl" />
+          <AiOutlineExclamationCircle className="text-2xl" />
+          <AiTwotoneFlag className="text-2xl" />
+          <Badgee badgeCount="7" badgeIcon={<AiOutlineMail className="text-black" />} />
+          <Badgee badgeCount="3" badgeIcon={<AiOutlineBell className="text-black" />} />
         </div>
         {/* icon part end */}
 
         {/* User profile part start */}
         <div className="col-span-2 flex bg-slate-200">
           <div className="flex items-center">
-            <img
-              src="https://tecdn.b-cdn.net/img/new/avatars/2.webp"
+            <Image
+              src="/active.jpg"
               className="rounded-full"
-              style={{ width: '3.25rem', height: '3.25rem' }}
+              width={52}
+              height={25}
+              style={{ height: '3.25rem' }}
               alt="Avatar"
             />
           </div>

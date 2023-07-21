@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 function NonActiveUser({ NonActiveUserImgPath, NonActiveUserName, NonActiveUserMsgTime, NonActiveUserMessage }) {
 
@@ -6,10 +7,12 @@ function NonActiveUser({ NonActiveUserImgPath, NonActiveUserName, NonActiveUserM
         <div className="chat-message">
             <div className='flex p-2'>
                 <div className="flex border p-2">
-                    <img
+                    <Image
                         src={NonActiveUserImgPath}
                         className="rounded-full"
-                        style={{ width: "3.5rem", height: "3rem" }}
+                        width={70}
+                        height={20}
+                        style={{ height: 46 }}
                         alt="Avatar"
                     />
                 </div>

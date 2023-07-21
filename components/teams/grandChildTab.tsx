@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import type { RadioChangeEvent } from 'antd';
-import { Radio, Tabs } from 'antd';
-
-import { PlusOutlined, SearchOutlined } from '@ant-design/icons'
-// import ParentTab from "../components/teams/parentTab";
-import ParentTab from './parentTab';
+import { Tabs } from 'antd';
 
 import TablesinTab from '../assessment/parentTabs';
 import Dropdownn from '../UI/dropdown';
@@ -14,10 +10,26 @@ import CheckIn from '../checkIn/checkIn';
 import ActionPlan from '../actionPlan/actionPlan';
 import Chat from '../chat/chat';
 
+import Image from 'next/image';
+
+import { Button, Drawer, Select, Space } from 'antd';
+import TeamDetails from './TeamDetails';
+
 type TabPosition = 'left' | 'right' | 'top' | 'bottom';
+const { Option } = Select;
 
 function GrandChildTab() {
     const [mode, setMode] = useState<TabPosition>('top');
+
+    const [open, setOpen] = useState(false);
+
+    const showDrawer = () => {
+        setOpen(true);
+    };
+
+    const onClose = () => {
+        setOpen(false);
+    };
 
     const handleModeChange = (e: RadioChangeEvent) => {
         setMode(e.target.value);
@@ -51,14 +63,34 @@ function GrandChildTab() {
 
     type PositionType = 'left' | 'right';
     const OperationsSlot: Record<PositionType, React.ReactNode> = {
-        left: <div className="col-span-2 flex py-2 pl-2">
+        left: <div className="col-span-2 flex py-1.5 pl-2">
             <div className="flex items-center">
-                <img
-                    src="https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg"
-                    className="rounded-full"
-                    style={{ width: '2rem', height: '2rem' }}
+                <Image
+                    onClick={showDrawer}
+                    src="/team2.jpg"
+                    className="rounded-full hover:cursor-pointer"
+                    width={39}
+                    height={39}
+                    style={{ height: 39 }}
                     alt="Avatar"
                 />
+                <Drawer
+                    title="Create a new account"
+                    width={720}
+                    onClose={onClose}
+                    open={open}
+                    bodyStyle={{ paddingBottom: 80 }}
+                    extra={
+                        <Space>
+                            <Button onClick={onClose}>Cancel</Button>
+                            <button onClick={onClose} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                Submitt
+                            </button>
+                        </Space>
+                    }
+                >
+                    <TeamDetails />
+                </Drawer>
             </div>
             <div className='flex items-center text-xl'>
                 <h1 className="px-2 font-semibold">Developers</h1>
