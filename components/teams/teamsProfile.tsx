@@ -11,9 +11,9 @@ function TeamsProfile({ teamName, teamImg, setTeamTitle, newMessages, activeTime
                         <Image
                             src={teamImg}
                             className="rounded-full"
-                            width={39}
+                            width={48}
                             height={39}
-                            style={{ height: 39 }}
+                            style={{ height: 40 }}
                             alt="Avatar"
                         />
                     </div>
