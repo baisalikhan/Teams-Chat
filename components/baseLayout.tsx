@@ -41,8 +41,8 @@ const items: MenuItem[] = [
         getItem('Bill', '4'),
         getItem('Alex', '5'),
     ]),
-    getItem('Teams', 'sub2', <TeamOutlined style={{ fontSize: "1.25rem", color: "#B0B0B0" }} />, [getItem('Team 1', '20'), getItem('Team 2', '22')]),
-    getItem('Prjects', '31', <FileOutlined style={{ fontSize: "1.25rem", color: "#B0B0B0" }} />),
+    getItem('Dashboard', 'dashboard', <TeamOutlined style={{ fontSize: "1.25rem", color: "#B0B0B0" }} />),
+    getItem('Succcession Plan', 'successionPlan', <FileOutlined style={{ fontSize: "1.25rem", color: "#B0B0B0" }} />),
     getItem('Users', 'sub7', <UserOutlined style={{ fontSize: "1.25rem", color: "#B0B0B0" }} />, [
         getItem('Tom', '6'),
         getItem('Bill', '7'),
