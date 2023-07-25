@@ -1,8 +1,12 @@
 import React from 'react'
+import { Button } from 'antd'
+import Index from "../components/successionPlan/index"
 
 function successionPlan() {
     return (
-        <div>Succession Plan</div>
+        <div className='flex ml-24'>
+            <Index />
+        </div>
     )
 }
 

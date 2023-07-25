@@ -32,15 +32,15 @@ function getItem(
     } as MenuItem;
 }
 
+interface childProps {
+    children: React.ReactNode;
+}
+
+
 const items: MenuItem[] = [
     getItem('Home', '/', <PieChartOutlined style={{ fontSize: "1.25rem", color: "#B0B0B0" }} />),
     getItem('About', 'about', <DesktopOutlined style={{ fontSize: "1.25rem", color: "#B0B0B0" }} />),
     getItem('Teams', 'teamsChat', <TeamOutlined style={{ fontSize: "1.25rem", color: "#B0B0B0" }} />),
-    getItem('Users', 'sub1', <UserOutlined style={{ fontSize: "1.25rem", color: "#B0B0B0" }} />, [
-        getItem('Tom', '3'),
-        getItem('Bill', '4'),
-        getItem('Alex', '5'),
-    ]),
     getItem('Dashboard', 'dashboard', <TeamOutlined style={{ fontSize: "1.25rem", color: "#B0B0B0" }} />),
     getItem('Succcession Plan', 'successionPlan', <FileOutlined style={{ fontSize: "1.25rem", color: "#B0B0B0" }} />),
     getItem('Users', 'sub7', <UserOutlined style={{ fontSize: "1.25rem", color: "#B0B0B0" }} />, [
@@ -73,7 +73,7 @@ const items: MenuItem[] = [
     getItem('Prjects', '18', <FileOutlined style={{ fontSize: "1.25rem", color: "#B0B0B0" }} />),
 ];
 
-const BaseLayout: React.FC = ({ children }) => {
+const BaseLayout: React.FC<childProps> = ({ children }) => {
     const router = useRouter();
     const [collapsed, setCollapsed] = useState(false);
     const {
