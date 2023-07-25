@@ -1,44 +1,55 @@
-import React from 'react';
-import { Line } from '@ant-design/plots';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 
-const Appraisalplot: React.FC = () => {
-    const data = [
-        { year: '2015', value: 6 },
-        { year: '2016', value: 12 },
-        { year: '2017', value: 14 },
-        { year: '2018', value: 2 },
-        { year: '2019', value: 14 },
-        { year: '2020', value: 1.5 },
-        { year: '2021', value: 9 },
-        { year: '2022', value: 9 },
-    ];
+const data = [{
+    name: '2015',
+    uv: 6,
+    amt: 20
+},
+{
+    name: '2016',
+    uv: 12,
+    amt: 20
+},
+{
+    name: '2017',
+    uv: 14,
+    amt: 20
+},
+{
+    name: '2018',
+    uv: 17,
+    amt: 20
+},
+{
+    name: '2019',
+    uv: 2,
+    amt: 20
+},
+{
+    name: '2020',
+    uv: 13,
+    amt: 20
+},
+{
+    name: '2021',
+    uv: 2.5,
+    amt: 20
+},
+{
+    name: '2022',
+    uv: 10,
+    amt: 20
+},
+];
 
-    const config = {
-        data,
-        width: 250,
-        height: 200,
-        autoFit: false,
-        xField: 'year',
-        yField: 'value',
-        point: {
-            size: 5,
-            shape: 'diamond',
-        },
-        label: {
-            style: {
-                fill: '#aaa',
-            },
-        },
-    };
+const AppraisalPlot = (
+    <LineChart width={250} height={250} data={data} margin={{ top: 25, right: 25, }}>
+        <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+    </LineChart>
+);
 
-    return (
-        <div className='ml-6' style={{ width: '240px', marginRight: '15px' }}>
-            <h1 className='my-4 pt-2 text-lg font-semibold'>
-                Appraisals
-            </h1>
-            {/* <Line {...config} onReady={(chartInstance) => (chart = chartInstance)} /> */}
-            <Line {...config} />
-        </div>
-    );
-};
-export default Appraisalplot;
+export default AppraisalPlot

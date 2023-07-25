@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Button, Drawer, Space } from 'antd';
 import type { DrawerProps } from 'antd/es/drawer';
 
-import Tabs from "./tabs"
-import SecondTabs from './secondTabs';
+import Tabs from "./sectionOne/tabs"
+import SecondTabs from './sectionTwo/secondTabs';
 import ThirdSection from './thirdSection';
 import FourthSection from './fourthSection';
 import FifthSection from './fifthSection';
@@ -33,6 +33,11 @@ const Index: React.FC = () => {
         size="large"
         onClose={onClose}
         open={open}
+        headerStyle={{
+          display: 'flex',
+          justifyContent: 'end',
+          justifyItems: 'end'
+        }}
         extra={
           <Space>
             <Button onClick={onClose}>Cancel</Button>
@@ -46,7 +51,7 @@ const Index: React.FC = () => {
         <FourthSection />
         <FifthSection />
         <SixthSection />
-      </Drawer>
+      </Drawer >
     </>
   );
 };
